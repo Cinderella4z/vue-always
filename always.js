@@ -1,6 +1,12 @@
+let alwaysIns=null
 export default class always {
   constructor(options) {
+    if(!alwaysIns){
     this.memo = options.memo
+    return this
+    }
+    console.error('always实例已存在')
+    return alwaysIns
   }
 
   plugin (store) {
